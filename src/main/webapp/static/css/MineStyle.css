@@ -1,0 +1,417 @@
+/* Mine.jsp 退出链接样式 */
+.logout-link {
+    color: #ff6b6b;
+    margin-left: 15px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.logout-link i {
+    margin-right: 5px;
+}
+/* 在 MineStyle.css 或页面底部添加 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.form-group.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.content-container {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: white;
+    border-radius: 5px 0 0 5px;
+    padding: 15px;
+}
+
+.sidebar-item {
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-item:hover {
+    background-color: #f0f7ff;
+}
+
+.sidebar-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.sidebar-item i {
+    margin-right: 10px;
+}
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+}
+
+.content-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* 订单列表样式 */
+.order-filters {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.order-filter {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+}
+
+.order-filter.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-number {
+    font-weight: bold;
+}
+
+.order-date {
+    color: #666;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-delivered {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.order-products {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.order-product {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.product-quantity {
+    color: #666;
+    font-size: 12px;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total {
+    font-weight: bold;
+}
+
+.order-actions a {
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    margin-left: 10px;
+}
+
+.order-actions a.view-details {
+    background-color: #6c757d;
+}
+
+/* 积分历史样式 */
+.points-container {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.points-summary {
+    flex: 1;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.points-total {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.points-label {
+    text-align: center;
+    color: #666;
+}
+
+.points-history {
+    flex: 2;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.points-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.points-item:last-child {
+    border-bottom: none;
+}
+
+.points-change {
+    font-weight: bold;
+}
+
+.points-increase {
+    color: #28a745;
+}
+
+.points-decrease {
+    color: #dc3545;
+}
+
+/* 账号管理样式 */
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    margin-right: 10px;
+}
+
+/* 新增的“回到首页”按钮样式 */
+.home-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    text-decoration: none;
+}

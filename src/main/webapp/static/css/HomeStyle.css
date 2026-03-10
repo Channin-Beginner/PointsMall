@@ -1,0 +1,351 @@
+/* Home.jsp 用户浮框样式 */
+/*.user-float-container {*/
+/*    position: fixed;*/
+/*    bottom: 80px; !* 在浮动栏上方 *!*/
+/*    right: 20px;*/
+/*    background: white;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 4px 12px rgba(0,0,0,0.15);*/
+/*    padding: 15px;*/
+/*    z-index: 1000;*/
+/*    width: 160px;*/
+/*    text-align: center;*/
+/*    font-size: 14px;*/
+/*}*/
+/* ---------- 修改用户悬浮窗口 ---------- */
+.user-float-container {
+    position: fixed;
+    bottom: auto; /* 移除底部定位 */
+    top: 25%;    /* 定位在垂直中心稍上方 */
+    right: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 10px; /* 减小内边距 */
+    z-index: 1000;
+    width: 80px; /* 缩小宽度 */
+    text-align: center;
+    font-size: 12px; /* 缩小字体 */
+    transform: translateY(-50%); /* 垂直居中 */
+}
+
+.user-float-icon {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.user-float-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-float-points {
+    margin-bottom: 10px;
+    word-break: break-word; /* 积分数值较长时自动换行 */
+    line-height: 1.4;
+}
+
+.user-float-logout {
+    color: #ff6b6b;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+}
+/* 顶部导航滚动效果 */
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.shadow-md { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+.nav-bar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    width: 300px;
+}
+.search-bar button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+.announcement {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+.category-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+}
+.category-item {
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.category-item:hover {
+    transform: scale(1.05);
+}
+.category-item.active {
+    color: #000;
+}
+.category-item a {
+    text-decoration: none;
+}
+.category-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #000;
+}
+.category-item p {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+}
+.product-display {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.product-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    cursor: pointer; /* 添加鼠标悬停效果 */
+}
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.product-item.hidden {
+    display: none;
+}
+.product-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/*.float-bar {*/
+/*    position: fixed;*/
+/*    right: 10px;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*    background-color: #fff;*/
+/*    padding: 10px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*    z-index: 1000;*/
+/*}*/
+/* ---------- 修改功能按钮悬浮窗 ---------- */
+.float-bar {
+    position: fixed;
+    right: 10px;
+    top: auto;      /* 移除垂直居中定位 */
+    bottom: 130px;  /* 下移位置，距底130px */
+    transform: none; /* 移除垂直偏移 */
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.float-bar a {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+.float-bar a:hover {
+    color: #007bff;
+}
+.back-to-top {
+    display: none;
+    color: #333;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.home-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+}
+footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+footer .footer-section {
+    flex: 1;
+}
+footer .footer-section h3 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 20px;
+}
+footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+footer .footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+}
+footer .footer-section p {
+    color: #666;
+    line-height: 1.6;
+}
+footer .footer-section .social-icons {
+    margin-top: 20px;
+}
+footer .footer-section .social-icons a {
+    margin-right: 15px;
+    color: #666;
+    font-size: 20px;
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.add-to-cart, .buy-now {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buy-now {
+    background-color: #ff4d4d;
+}
+
+.add-to-cart:hover, .buy-now:hover {
+    opacity: 0.9;
+}

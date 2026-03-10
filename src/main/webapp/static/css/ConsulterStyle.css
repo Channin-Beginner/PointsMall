@@ -1,0 +1,13 @@
+@layer utilities {
+    .chat-bubble-user {
+        background: #165DFF;
+        color: white;
+        border-radius: 18px 18px 0 18px;
+    }
+    .chat-bubble-cs {
+        background-color: white;
+        color: #1D2129;
+        border-radius: 18px 18px 18px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+}

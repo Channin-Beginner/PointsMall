@@ -1,0 +1,70 @@
+1.数据库创建表
+2.前台页面
+    登陆页面
+      D:\YIBANWENJIANJI\BIANCHENG\java IDEA\IDEA java DAIMAJI\Java Practical Homework\PointsMall\src\main\webapp\login.jsp
+      在login.jsp做用户登录界面(输入URL先进入首页，点击登陆按钮进入用户登录界面，还有一些只有登录才能查看的页面一点击就跳转到用户登录界面(监听器))
+      和登陆表单校验(js校验(引入JQuery))
+    首页
+      index.jps做首页
+3.后台实现
+
+分层：（在com.hemisphericconflict.pointsmall下新建）
+  dao层
+    进行数据库的操作(jdbc操作)
+  entyti
+    JavaBean实体
+  web层
+    接受请求
+    （调用service层，返回结果）
+    响应结果
+    过滤器(loginFilter)、servlet等
+  service层
+    业务逻辑判断
+  util层
+    工具类（通用的方法/类）
+  test层(与main同级)
+    测试类/方法
+4.静态资源和页面放在webapp下
+  admin包
+  user包
+  static包
+  common包
+5.在 src/main/webapp/WEB-INF 目录下新建lib目录，lib目录下放jar包
+
+
+注意：
+1.引入了c3p0-0.9.5.2.jar、commons-beanutils-1.9.4.jar、commons-collections-3.2.1.jar、commons-dbutils-1.7.jar、
+commons-logging-1.2.jar、gson-2.2.4.jar、jstl-1.2.jar、junit-4.12.jar、mchange-commons-java-0.2.15.jar和mysql-connector-java-8.0.28.jar包
+还有c3p0-config.xml配置和c3p0Tool类
+2.手动引入jar包，还是使用maven管理
+3.将admin和user权限分离(静态资源和页面，专属包(admin包、user包、static包、common包)和公共页(login.jsp和index.jsp是公共的，login.jsp登陆后跳转到index.jsp))
+   AdminServlet 拦截器、前端菜单根据角色动态显示
+   业务层：
+   登录逻辑：验证账号后，根据role字段转发到对应界面（管理员→admin包，用户→user包）。
+   权限校验：在UserService中对敏感操作（如修改商品库存）添加role==1的校验，防止越权访问。
+   界面层：
+   管理员页面（admin包）添加权限拦截（如通过 Filter 检查 Session 中的role），拒绝普通用户访问
+4.使用jsp指令标签，动态包含通用的标签
+5.页面背景图片（美化阶段）
+6.
+7.Dao、DB、Service和Servlet分层
+8.
+9.
+10.
+
+
+1.在和header.jsp同级的文件中，引入header.jsp没有效果
+2.注册时，手机号没有固定字数
+3.凡是有用到手机号、邮箱的，都没有实际获取信息
+4.忘记密码页面功能无法正常运用，不知道错在哪
+5.没有将样式组件分开
+6.可以给回到首页的图标加一个悬浮提示，回到首页
+7.首页页头要实现悬浮跟踪下滑
+8.每个页面都应该是同一个固定的页头、页尾
+9.三个积分商城的图标哪个好一点
+10.网址图标、积分图标
+11.操作数据库，比如增加商品的代码(增加一个修改商品信息的页面，只有管理员才有)
+12.在服务器启动的情况下，在数据库中新增商品，虽然刷新网站可以加载到商品，但是无法正确显示图片，只有重新启动服务器才能正确显示
+13.首页在没有登陆的情况下也能假如购物车和购买
+14.有些页面是只有登录才能查看(监听器)(购物车、我的、客服、每日任务)
+15.首页加一个用户名和用户头像

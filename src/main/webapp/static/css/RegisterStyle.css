@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 30px 10px 10px; /* 增加右侧内边距为30px，为图标腾出空间 */
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* 新增：隐藏浏览器默认的密码显示图标 */
+input[type="password"]::-webkit-password-reveal,
+input[type="password"]::-ms-reveal {
+    display: none; /* 隐藏Chrome/Edge的默认图标 */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    width: 16px; /* 明确图标宽度 */
+    height: 16px; /* 明确图标高度 */
+    line-height: 16px; /* 垂直居中 */
+}
+
+.toggle-password:hover {
+    color: #007bff; /* 鼠标悬停时改变颜色 */
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.verification-code {
+    display: flex;
+    gap: 10px;
+}
+
+.verification-code input {
+    flex: 2;
+}
+
+.verification-code button {
+    flex: 1;
+    background-color: #6c757d;
+    font-size: 0.9em;
+    margin-top: 0;
+}
+
+.verification-code button:hover {
+    background-color: #5a6268;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.terms input {
+    margin-right: 5px;
+}
+
+.links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
