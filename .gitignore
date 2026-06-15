@@ -36,3 +36,19 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+/src/main/webapp/待解决问题.txt
+/src/main/webapp/整体结构.txt
+
+*test*
+
+*.log
+
+/.maven/
+
+/.github
+
+/.git/
+
+/.gitignore
+
